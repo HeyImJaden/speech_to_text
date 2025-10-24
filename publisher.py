@@ -81,7 +81,6 @@ def listen_and_publish(mqtt_client):
 
 if __name__ == "__main__":
     mqtt_publisher = setup_mqtt()
-    # Avvia il loop di rete MQTT in un thread separato.
     # Questo gestisce l'invio e la ricezione dei messaggi in background.
     mqtt_publisher.loop_start()
 
