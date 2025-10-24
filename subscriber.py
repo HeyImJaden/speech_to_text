@@ -12,12 +12,12 @@ def on_connect(client, userdata, flags, rc):
     La sottoscrizione al topic avviene qui.
     """
     if rc == 0:
-        print("✅ Subscriber connesso al Broker MQTT!")
-        print(f"👂 In ascolto sul topic: '{MQTT_TOPIC}'")
+        print("Subscriber connesso al Broker MQTT!")
+        print(f"In ascolto sul topic: '{MQTT_TOPIC}'")
         # Sottoscriviti al topic dopo una connessione riuscita
         client.subscribe(MQTT_TOPIC)
     else:
-        print(f"❌ Connessione fallita, return code {rc}\n")
+        print(f"Connessione fallita, return code {rc}\n")
 
 def on_message(client, userdata, msg):
     """
@@ -45,5 +45,6 @@ if __name__ == "__main__":
     try:
         mqtt_subscriber.loop_forever()
     except KeyboardInterrupt:
-        print("\n👋 Uscita dal programma.")
+        print("\nUscita dal programma.")
+
         mqtt_subscriber.disconnect()
